@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #B5AFA2;
+    justify-content: center;
+
+}
+
+#subtitulo {
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    left: 39px;
+    margin-top: 5px;
+    text-align: center;
+    text-shadow: 6px 4px 4px rgba(68, 75, 84, 0.41);
+    font-size: 2.2rem;
+    font-family: 'Poppins', sans-serif;
+    line-height: 66px;
+}
+
+p {
+    position: absolute;
+    width: 500px;
+    height: 33px;
+    left: 39px;
+    margin-top: 70px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+#caixinha {
+    position: absolute;
+    width: 715px;
+    height: 610px;
+    left: 45px;
+    top: 60px;
+    
+    background: #EAE3DC;
+    box-shadow: 4px 4px 4px rgba(68, 75, 84, 0.62);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+form{
+    position: absolute;
+    width: 650px;
+    height: 708px;
+    left: 30px;
+    top: 130px;
+}
+
+.campo {
+    margin-bottom: 1.5em;
+    margin-right: 15px;
+}
+
+.campo label, .campo2 label, campo3 label {
+    margin-bottom: 0.3em;
+    display: block;
+}
+
+fieldset{
+    display: inline;
+    border: none;
+}
+
+input{
+    float: left;
+    width: 300px;
+    height: 40px;
+    padding-left: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 0px;
+}
+
+input[type="password"] {
+    margin-bottom: 20px;
+}
+
+select {
+    border-radius: 10px;
+}
+
+.campus {
+    display: inline-block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+
+    background-color: #444B54;
+    color: 
+    cursor: pointer;
+    transition: transform 200ms ease-in
+}
+
+button:hover {
+    transform: scale(1.05)
+
+}
+
+a {
+    color:#ffffff;
+}

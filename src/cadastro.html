@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tela de cadastro</title>
+
+        <link rel="preconnect" href="<link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto&display=swap" rel="stylesheet">  
+        <link rel="stylesheet" href="css/cadastro.css">
+
+    </head>
+
+    <body>  
+        <div id="caixinha">
+
+            <div>
+                <h2 id="subtitulo">Cadastro</h2>
+                <p>Faça seu cadastro para começar a navegar!</p>
+            </div>
+            <form>
+                
+                <fieldset class="grupo">
+                    <div class="campo">
+                        <label>Nome</label>
+                        <input type="text", name="nome", id="nome", placeholder="Digite aqui o seu nome" >
+                        
+
+                        <label>Matrícula:</label>
+                        <input type="number", name="matricula", id="matricula", placeholder="Adicione aqui sua matrícula">
+
+                        </div>
+                </fieldset>
+                <fieldset class="grupo2">
+                    <div class="campo">
+                        <label>Sobrenome:</label>
+                        <input type="text", name="sobrenome", id="sobrenome", placeholder="Digite aqui seu sobrenome">
+                    
+                        <label>E-mail:</label>
+                        <input type="email",name="email", id="email", placeholder="Digite aqui seu e-mail" >
+                    </div>
+                </fieldset>
+
+                <div class="campo2">
+                    <label>Campus:</label>
+                    <label class="campus">
+                    <input type="radio", name="campus", value="darcy">Darcy Ribeiro    
+                    </label>
+                    <label class="campus">
+                    <input type="radio", name="campus", value="fga">FGA
+                    </label class="campus">
+                    <label class="campus">
+                    <input type="radio", name="campus", value="ceilandia">Campus Ceilândia
+                    </label>
+                    <label class="campus">
+                    <input type="radio", name="campus", value="planaltina">Campus Planaltina
+                    </label>
+                </div>
+
+                <div class="campo">
+                    <label>Curso:</label>
+                    <select id="curso">
+                        <option selected disabled value="">Selecione um item da lista:</option>
+                        <option>Administração</option>
+                        <option>Agronomia</option>
+                        <option>Arquitetura e urbanismo</option>
+                        <option>Arquivologia</option>
+                        <option>Artes Cênicas</option>
+                        <option>Artes Visuais</option>
+                        <option>Biblioteconomia</option>
+                        <option>Biotecnologia</option>
+                        <option>Ciência da Computação (bacharelado)</option>
+                        <option>Ciência Política</option>
+                        <option>Ciências Ambientais</option>
+                        <option>Ciências Biológicas</option>
+                        <option>Ciências Contábeis</option>
+                        <option>Ciências Econômicas</option>
+                        <option>Ciências Farmacêuticas</option>
+                        <option>Ciências Sociais</option>
+                        <option>Computação (licenciatura)</option>
+                        <option>Comunicação Organizacional</option>
+                        <option>Comunicação Social - Publicidade e Propaganda</option>
+                        <option>Comunicação Social - Audiovisual</option>
+                    </select>    
+                </div>
+                <fieldset class="grupo3">
+                    <div class="campo">
+                        <label>Senha:</label>
+                        <input type="password", name="senha", id="senha", placeholder="Digite aqui a senha que ira ultilizar" >
+                    </div>
+                </fieldset> 
+                <fieldset class="grupo4">
+                    <div class="campo">
+                        <label>Confirme sua senha:</label>
+                        <input type="password", name="senha", id="senha", placeholder="Confirme sua senha" >
+                    </div>
+                </fieldset> 
+
+                <div></div>
+
+                <button> <a href="index.html">Registrar-se</button></a>
+            </form>
+        </div>
+    </body>
+
+</html>
