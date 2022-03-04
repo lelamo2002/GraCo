@@ -8,6 +8,7 @@ Nome | Matrícula
 --|--
 Maria Luisa Alves | 211039617
 Tiago Albuquerque de Lima | 202028973
+Samuel Ricardo Dias da Silva | 211031495
 
 
 ### Sobre o projeto:
