@@ -7,7 +7,7 @@
 Nome | Matrícula
 --|--
 Maria Luisa Alves | 211039617
-Tiago Albuquerque de Lima | 202028973
+Tiago Albuquerque | 202028973
 Samuel Ricardo Dias da Silva | 211031495
 Leonardo Lago Moreno | 211031762
 
