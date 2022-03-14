@@ -9,8 +9,9 @@
         <link rel="preconnect" href="<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto&display=swap" rel="stylesheet">  
+        
+        
         <link rel="stylesheet" href="css/cadastro.css">
-
     </head>
 
     <body>  
@@ -24,26 +25,26 @@
                 
                 <fieldset class="grupo">
                     <div class="campo">
-                        <label>Nome</label>
-                        <input type="text", name="nome", id="nome", placeholder="Digite aqui o seu nome" >
+                        <label id="labelNome">Nome:</label>
+                        <input type="text", name="nome", id="nome", placeholder="Digite aqui o seu nome" required>
                         
 
-                        <label>Matrícula:</label>
-                        <input type="number", name="matricula", id="matricula", placeholder="Adicione aqui sua matrícula">
+                        <label id="labelMatricula">Matrícula:</label>
+                        <input type="number", name="matricula", id="matricula", placeholder="Adicione aqui sua matrícula" required>
 
                         </div>
                 </fieldset>
                 <fieldset class="grupo2">
                     <div class="campo">
-                        <label>Sobrenome:</label>
-                        <input type="text", name="sobrenome", id="sobrenome", placeholder="Digite aqui seu sobrenome">
+                        <label id="labelSobrenome">Sobrenome:</label>
+                        <input type="text", name="sobrenome", id="sobrenome", placeholder="Digite aqui seu sobrenome" required>
                     
-                        <label>E-mail:</label>
-                        <input type="email",name="email", id="email", placeholder="Digite aqui seu e-mail" >
+                        <label id="labelEmail">E-mail:</label>
+                        <input type="email",name="email", id="email", placeholder="Digite aqui seu e-mail" required>
                     </div>
                 </fieldset>
 
-                <div class="campo2">
+                <div class="campo2" >
                     <label>Campus:</label>
                     <label class="campus">
                     <input type="radio", name="campus", value="darcy">Darcy Ribeiro    
@@ -60,8 +61,8 @@
                 </div>
 
                 <div class="campo">
-                    <label>Curso:</label>
-                    <select id="curso">
+                    <label id="labelCurso">Curso:</label>
+                    <select id="curso" required>
                         <option selected disabled value="">Selecione um item da lista:</option>
                         <option>Administração</option>
                         <option>Agronomia</option>
@@ -87,22 +88,22 @@
                 </div>
                 <fieldset class="grupo3">
                     <div class="campo">
-                        <label>Senha:</label>
-                        <input type="password", name="senha", id="senha", placeholder="Digite aqui a senha que ira ultilizar" >
+                        <label id="labelSenha">Senha:</label>
+                        <input type="password", name="senha", id="senha", placeholder="Digite aqui a senha que ira ultilizar" required>
                     </div>
                 </fieldset> 
                 <fieldset class="grupo4">
                     <div class="campo">
-                        <label>Confirme sua senha:</label>
-                        <input type="password", name="senha", id="senha", placeholder="Confirme sua senha" >
+                        <label id="labelConfirmação">Confirme sua senha:</label>
+                        <input type="password", name="confirmação", id="confirmação", placeholder="Confirme sua senha" required>
                     </div>
                 </fieldset> 
 
                 <div></div>
 
-                <button> <a href="index.html">Registrar-se</button></a>
+                <button onclick="cadastrar()">Registrar-se</button>
             </form>
         </div>
     </body>
-
+    <script type="text/javascript" src="javascript/cadastro.js"></script>
 </html>
