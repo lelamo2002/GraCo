@@ -10,28 +10,42 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto&display=swap" rel="stylesheet">
         
-        <link rel="stylesheet" href="css/forma.css">
+        <link rel="stylesheet" href="css/login.css"> 
+        <script defer src="javascript/login.js"></script>
+
     </head>
     <body>
         <!--Fazer/definir o nome do site e colocar ele com h1 e no título-->
-        <h2>Login</h2>
-
-        <label>
-            Faça seu cadastro para começar a navegar
-
-        </label>
-
-        <div id="borda">
-            <p>E-mail:</p>
-            <input type="email"> 
-
-            <p>Senha:</p>
-            <input type="password">
-
-            <button> <a href="cadastro.html">
-                Entrar
-            </a></button>
-        </div>
-        
+        <!-- <div class="login_wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#7F8996" fill-opacity="1" d="M0,0L34.3,10.7C68.6,21,137,43,206,90.7C274.3,139,343,213,411,245.3C480,277,549,267,617,256C685.7,245,754,235,823,197.3C891.4,160,960,96,1029,58.7C1097.1,21,1166,11,1234,37.3C1302.9,64,1371,128,1406,160L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+            </svg>
+        </div> -->
+        <main class="login">
+            <h1 class="login_title">Login</h1>
+            <div class="login_subtitle">
+                <label>Insira seu cadastro para começar a navegar!</label>
+            </div>
+            <div class="login-container">    
+                <form class="login_form">
+                    <div class="login_label">
+                        <label >E-mail:</label>
+                    </div>
+                    <input class="login_input", type="e-mail", placeholder="e-mail">
+                    <div class="login_label">
+                        <label class="login_label">Senha:</label>
+                    </div>
+                    <input class="login_input", type="password", placeholder="senha">
+                    <button class="login_button">Entrar</button>
+                    <div class="login_register">
+                    <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se!</a></p>
+                    </div>
+                </form>
+            </div>
+            <!-- <div class="login_image">
+                <img src="imagens/logo.png" alt="logo">
+            </div>  -->
+            
+        </main>
     </body>
 </html>
