@@ -20,7 +20,7 @@ Atualmente o front-end consiste em uma aplicação envolvendo **HTML** e **CSS**
 
 
 ##### Back-end
-
+ Antes de rodar o código é necessário executar o comando `yarn init`, depois, use o comando `yarn dev`
 
 
 
