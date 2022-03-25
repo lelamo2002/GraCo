@@ -1,36 +1,39 @@
-var mysql      = require('mysql');
+const mysql = require('mysql');
+const express = require('express');
+
+const app = express()
+
+app.use(express.json())
+const port = 3000
+
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'teste3'
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'teste3'
 });
-
-
-var data = "2022/10/20"
-var nome = "pedro"
-var matricula = "200131324"
-var curso = "pedro"
-var semestre = "4"
-var campus = "sim"
-var confiança = "a"
-var vacinação = "e"
-var modelo = "4"
-
-
 
 connection.connect();
 
 
-connection.query(`INSERT INTO forms VALUES ("${data}","${nome}","${matricula}","${curso}","${semestre}","${campus}","${confiança}","${vacinação}","${modelo}",default)`, function (error, results, fields) {
-    if (error) throw error;
-    console.log('The solution is: ', results);
+
+app.get('/', (req, res) => {
+  connection.query('SELECT * FROM forms', function (error, results, fields) {
+    res.send({ "solution": results });
   });
 
+})
+
+app.post('/cadastro', (req, res) => {
+  const { data, nome, matricula, curso, semestre, campus, confiança, vacinação, modelo } = req.body;
+  console.log(data, nome, matricula, curso, semestre, campus, confiança, vacinação, modelo)
+  connection.query(`INSERT INTO forms VALUES ("${data}","${nome}","${matricula}","${curso}","${semestre}","${campus}","${confiança}","${vacinação}","${modelo}",default)`, function (error, results, fields) {
+    res.send({ "solution": results });
+  });
+
+})
 
 
-connection.query('SELECT * FROM forms', function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results[[results.length - 1]]);});
-  
-connection.end();
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
