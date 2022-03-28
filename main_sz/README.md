@@ -7,7 +7,9 @@
 Nome | Matrícula
 --|--
 Maria Luisa Alves | 211039617
-Tiago Albuquerque de Lima | 202028973
+Tiago Albuquerque | 202028973
+Samuel Ricardo Dias da Silva | 211031495
+Leonardo Lago Moreno | 211031762
 
 
 ### Sobre o projeto:
@@ -18,7 +20,7 @@ Atualmente o front-end consiste em uma aplicação envolvendo **HTML** e **CSS**
 
 
 ##### Back-end
-
+ Antes de rodar o código é necessário executar o comando `yarn init`, depois, use o comando `yarn dev`
 
 
 
