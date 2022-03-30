@@ -1,7 +1,7 @@
 ﻿# Terras Devastadas
 ---
 
-### Nome do site - a definir
+### Nome do site - Graco
 
 ### Integrantes:
 Nome | Matrícula
