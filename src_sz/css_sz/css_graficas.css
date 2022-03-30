@@ -1,10 +1,6 @@
-html, body{
-    max-width: 100%;
-    overflow-x: hidden;
-}
 #h1main{
 position: absolute;
- width: 341px;
+width: 341px;
 height: 21px;
 left: 30px;
 top: 10px;   
@@ -15,7 +11,7 @@ font-family: 'Poppins';
 position: absolute;
 width: 341px;
 height: 21px;
-left: 400px;
+left: 250px;
 top: 250px;   
 z-index: 9999;
 font-family: 'Poppins';
@@ -23,45 +19,46 @@ font-family: 'Poppins';
 .rectangle {
 position: absolute;
 width: 1550px;
-height: 85px;
+height: 95px;
 left: 0px;
 top: 0px;
 background: #C4C4C4;
 }
 .rectangle2{
 position: absolute;
-width: 1170px;
+width: 1559px;
 height: 160px;
-left: 380px;
-top: 0px;
+left: -190px;
+top: 85px;
 background: #E0E0E0;
 }
 #ul1{
 list-style-type: none;
 position: absolute;
-width: 341px;
-height: 1700px;
-left: 0px;
-top: 69px;
+width: 1200px;
+height: 30px;
+left: 180px;
+top: -5px;
 background: #C4C4C4;
 padding: 20px;
 }
 #ulli1 {
-background: #808080;
+display:inline;
+background: #C4C4C4;
 padding: 5px;
 margin: 20px;
 font-size: 30px;
 font-family: 'Poppins';
 }
 #ulli1:hover{
-background: #E0E0E0;    
+background: #808080;    
 }
 #ul2{
 list-style-type: none;
 position: absolute;
 width: 1200px;
 height: 100px;
-left: 600px;
+left: 180px;
 top: 65px;
 padding: 20px;
 }
@@ -77,7 +74,7 @@ border-radius: 50%;
 width: 120px;
 height: 120px;
 top: 100px;
-left: 450px;
+left: 50px;
 z-index: 9999;
 }
 a{
@@ -89,7 +86,7 @@ position: absolute;
 width: 300px;
 height: 150px;
 top: 360px;
-left: 450px;
+left: 250px;
 background: #E0E0E0;
 }
 #alvac{
@@ -97,7 +94,7 @@ position: absolute;
 width: 300px;
 height: 250px;
 top: 360px;
-left: 480px;    
+left: 280px;    
 font-family: 'Poppins';
 }
 #alvacval{
@@ -105,7 +102,7 @@ position: absolute;
 width: 300px;
 height: 250px;
 top: 360px;
-left: 580px;    
+left: 380px;    
 font-family: 'Poppins';
 font-size: 50px;
 }
@@ -114,7 +111,7 @@ position: absolute;
 width: 300px;
 height: 150px;
 top: 360px;
-left: 800px;
+left: 600px;
 background: #E0E0E0;
 }
 #casrec{
@@ -122,7 +119,7 @@ position: absolute;
 width: 300px;
 height: 250px;
 top: 360px;
-left: 835px;    
+left: 635px;    
 font-family: 'Poppins';
 }
 #casrecval{
@@ -130,7 +127,7 @@ position: absolute;
 width: 300px;
 height: 250px;
 top: 360px;
-left: 920px;    
+left: 720px;    
 font-family: 'Poppins';
 font-size: 50px;
 }
@@ -139,7 +136,7 @@ position: absolute;
 width: 300px;
 height: 150px;
 top: 360px;
-left: 1150px;
+left: 950px;
 background: #E0E0E0;
 }
 #alcon{
@@ -147,7 +144,7 @@ position: absolute;
 width: 300px;
 height: 250px;
 top: 360px;
-left: 1165px;    
+left: 970px;    
 font-family: 'Poppins';
 }
 #alconval{
@@ -155,7 +152,7 @@ position: absolute;
 width: 300px;
 height: 250px;
 top: 360px;
-left: 1270px;    
+left: 1070px;    
 font-family: 'Poppins';
 font-size: 50px;
 }
@@ -163,14 +160,13 @@ font-size: 50px;
 width: 800px; 
 height: 500px;    
 position: absolute;
-left: 550px;
+left: 350px;
 top: 600px;
 }
 #columnchart_material2{
 width: 800px; 
 height: 500px;    
 position: absolute;
-position: absolute;
-left: 550px;
+left: 350px;
 top: 1200px;
 }
