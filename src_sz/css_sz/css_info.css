@@ -7,15 +7,6 @@
     z-index: 9999;
     font-family: 'Poppins';
     }
-#title1{
-    position: absolute;
-    width: 341px;
-    height: 21px;
-    left: 30px;
-    top: 80px;   
-    z-index: 9999;
-    font-family: 'Poppins';
-    }
 .rectangle {
     position: absolute;
     width: 100%;
@@ -50,10 +41,22 @@ a{
         color: black;
     }
 @media screen and (max-width: 480px){
-    #ul1{
-        height: 200%;
-    }
     .rectangle{
-        width: 200%;
+        width: 400%;
     }
+}
+#texto{
+    position:absolute;
+    top: 100px;
+    left: 30px;
+    font-family: 'Poppins';
+    width: 800px;
+}
+pre{
+    font-family: 'Poppins';
+    width: 800px;
+}
+#vacs{
+    position:absolute;
+    left: 80px;
 }
