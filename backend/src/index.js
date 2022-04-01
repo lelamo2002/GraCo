@@ -13,13 +13,6 @@ createTableUser()
 
 
 
-// app.get('/', (req, res) => {
-//   connection.query('SELECT * FROM forms', function (error, results, fields) {
-//     res.send({ "solution": results });
-//   });
-
-// })
-
 app.post('/cadastro', (req, res) => {
   InsertUser(req.body);
   console.log(req.body)
