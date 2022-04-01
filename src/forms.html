@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GraCo-Forms</title>
+
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+    <header>
+        <h1>Graco</h1>
+        <nav id="menu">
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">perfil</a></li>
+                <li><a href="#">Forms</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Sair</a></li>  
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="textoAcompanhamento">
+        <h2>Contribua  para a nossa pesquisa!</h2>
+        <p>O formulária  a seguir é um complemento aos dados presentes e já coletados na nossa página principal.</p>
+    </div>
+
+    <div class="box">
+        <div class="box2">
+            <form>
+                <fieldset>
+                    <div class="campo">
+                        <label id="nomeLabel">Nome:</label>
+                        <input type="text", name="nome", id="nome", placeholder="Digite aqui o seu nome" required>
+
+                        <label id="generoLabel">Gênero</label>
+                        <select id="genero", required, onchange="getSelectGeneroValue()" >
+                            <option selected disabled value="">Selecione um item da lista:</option>
+                            <option value="mulherCis">Mulher Cis</option>
+                            <option value="homemCis">Homem Cis</option>
+                            <option value="mulherTrans">Mulher Trans</option>
+                            <option value="homemTrans">Homem Trans</option>
+                            <option value="naoBinario">Não-binário</option>
+                        </select>
+
+                        <label id="raçaLabel">Raça</label>
+                        <select id="raça", required, onchange="getSelectRacaValue()">
+                            <option selected disabled value="">Selecione um item da lista:</option>
+                            <option value="branco">Branco</option>
+                            <option value="indigena">Indigena</option>
+                            <option value="pardo">Pardo</option>
+                            <option value="preto">Preto</option>
+                            <option value="amarelo">Amarelo</option>
+                        </select>
+                    </div>
+                </fieldset>
+            
+                <fieldset>
+                    <div class="campo2">
+                        <label id="estadoLabel">Estado</label>
+                        <select class="estadoClass" id="estado", required, onchange="getSelectEstadoValue()">
+                            <option selected disabled value="">Selecione um item da lista:</option> 
+                        </select>
+
+                        <label id="labelCidade">Cidade</label>
+                        <select class="cidadeClass" id="cidade">
+                            <option selected disabled value="">Selecione um item da lista:</option>
+                            
+                        </select>
+
+
+                        <label id="matriculaLabel">Matrícula</label>
+                        <input type="number", name="matricula", id="matricula", placeholder="Adicione aqui sua matrícula" required>
+
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div class="campo3">
+
+                        <label id="campusLabel">Campus:</label>
+                        <select id="campus", required, onchange="getSelectCampusValue()">
+                            <option selected disabled value="">Selecione seu campus</option>
+                            
+                        </select>
+
+                        <label id="cursoLabel">Curso:</label>
+                        <select id="cursos", required, onchange="getSelectCursoValue()"> <!--adicionar no java - dependendo do campus-->
+                            <option selected disabled value="">Qual seu semestre?</option>
+                        </select>
+                    </div> 
+
+                    <div class="campo4">
+                        
+                        <label id="semestreLabel">Semestre:</label>
+                        <select id="semestre", required, onchange="getSelectSemestreValue()">
+                            <option selected disabled value="">Qual seu semestre?</option>
+                            <option value="1Semestre">1° Semestre</option>
+                            <option value="2Semestre">2° Semestre</option>
+                            <option value="3Semestre">3° Semestre</option>
+                            <option value="4Semestre">4° Semestre</option>
+                            <option value="5Semestre">5° Semestre</option>
+                            <option value="6Semestre">6° Semestre</option>
+                            <option value="7Semestre">7° Semestre</option>
+                            <option value="8Semestre">8° Semestre</option>
+                            <option value="9Semestre">9° Semestre</option>
+                            <option value="10Semestre">10° Semestre</option>
+                            <option value="11Semestre">11° Semestre</option>
+                            <option value="12Semestre">12° Semestre</option>
+                        </select>
+
+                        <label id="nivelConfiançaLabel">Nivel de confiança:</label>
+                        <select id="nivelConfiança", required, onchange="getSelectConfiancaValue()">
+                            <option selected disabled value="">Selecione um item da lista:</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                            <option value="talvez">Talvez</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div class="campo5">
+                        <label id="vacinaçãoLabel">Você está vacinado?</label>
+                        <select id="vacinação", required, onchange="getSelectVacinaValue()">
+                            <option selected disabled value="">Selecione um item da lista:</option>
+                            <option value="Sim, de 1º dose">Sim, de 1º dose</option>
+                            <option value="Sim, de 2º dose">Sim, de 2º dose</option>
+                            <option value="Sim, de 3º dose">Sim, de 3º dose</option>
+                            <option value="Sim, de vacina de dose única">Sim, de vacina de dose única</option>
+                            <option value="Não">Não</option>
+                        </select>
+
+                        <label id="modeloLabel">Qual modelo você considera pior para o aprendizado?</label>
+                        <select id="modelo", required, onchange="getSelectModeloValue()">
+                            <option selected disabled value="">Selecione um item da lista:</option>
+                            <option value="remoto">Remoto</option>
+                            <option value="presencial">Presencial</option>
+                            <option value="hibrido">Híbrido</option>
+                        </select>
+
+                    </div>
+                </fieldset>
+
+                <button onclick="enviar()">Enviar</button>
+           
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="javascript/forms.js" defer></script>
+</body>
+</html>
