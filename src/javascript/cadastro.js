@@ -3,7 +3,6 @@ let nome = document.querySelector("#nome")
 let labelNome = document.querySelector("#labelNome")
 let validNome = false
 
-
 let sobrenome = document.querySelector("#sobrenome")
 let labelSobrenome = document.querySelector("#labelSobrenome")
 let validSobrenome = false
@@ -82,7 +81,7 @@ email.addEventListener('keyup', ()=>{
 })
 
 senha.addEventListener('keyup', ()=>{
-    if(senha.value.length < 8) {
+    if(senha.value.length < 6) {
         labelSenha.setAttribute('style', 'color: red')
         labelSenha.innerHTML = "<strong>Senha:</strong>"
 
