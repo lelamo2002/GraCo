@@ -30,7 +30,7 @@
     background: #C4C4C4;
     padding: 5px;
     margin: 20px;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Poppins';
     }
 #ulli1:hover{
@@ -51,13 +51,12 @@ a{
     left: 30px;
     font-family: 'Poppins';
     width: 800px;
-    font-size: 80px;
 }
 pre{
     font-family: 'Poppins';
     width: 800px;
 }
-#vacs{
-    position:absolute;
-    left: 80px;
+#CoronaVac,#AstraZeneca,#Pfizer,#Janssen,#Novavax,#SputnikV{
+    position:relative;
+    left:40px;
 }

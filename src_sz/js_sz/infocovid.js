@@ -10,7 +10,7 @@ function MostrarOcultar( ref )
   
   if (nodoContraible.style.display =='none') 
   { 
-	   nodoContraible.style.display ='block'; 
+	   nodoContraible.style.display ='inline-block'; 
   } 
   else 
   { 

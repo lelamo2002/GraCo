@@ -16,6 +16,7 @@
     <a href="Rastreamento"><li id="ulli1">Rastreamento</li></a>
     <a href="Dicas"><li id="ulli1">Dicas</li></a>
     <a href="Sobre nós"><li id="ulli1">Sobre nós</li></a>
+    <a href="Forms"><li id="ulli1">Forms</li></a>
     <a href="Sair"><li id="ulli1">Sair</li></a>
     <div class="rectangle2"></div>
     </ul>
