@@ -1,6 +1,7 @@
 // import { openDb } from './configDB.js';
 import { createTablePlot, InsertPlot } from './controller/plot.js'
 import { checkPassword, checksDontExistUserAccount, checksExistsUserAccount, createTableUser, InsertUser } from './controller/user.js'
+import { getData, checCad } from './controller/plot.js'
 import express from 'express';
 import cors from 'cors';
 
@@ -21,8 +22,15 @@ createTableUser()
 
 
 app.post('/cadastro', checksExistsUserAccount, (req, res) => {
-  InsertUser(req.body);
-  res.status(200).json({ message: "Usuário cadastrado com sucesso" })
+
+  const data = req.body
+  const matricula = data.matricula
+  if (matricula.length != 9) {
+    return res.status(400).json({ error: "Matricula invalida" })
+  } else {
+    InsertUser(data);
+    res.status(200).json({ message: "Usuário cadastrado com sucesso" })
+  }
 });
 
 app.get('/login', checksDontExistUserAccount, checkPassword, (req, res) => {
@@ -31,10 +39,16 @@ app.get('/login', checksDontExistUserAccount, checkPassword, (req, res) => {
 
 })
 
-app.post('/plot', (req, res) => {
+app.post('/plot', checCad, (req, res) => {
+
   InsertPlot(req.body);
-  console.log(req.body)
   res.json({ "statusCode": 200 })
+});
+
+app.get('/plot', (req, res) => {
+  getData().then(data => {
+    res.json(data)
+  })
 });
 
 app.listen(port, () => {
