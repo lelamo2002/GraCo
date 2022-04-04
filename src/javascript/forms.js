@@ -42,7 +42,7 @@ $(document).ready(function(){
     function carregar_json(id, cursos_id){
         var html = '';
 
-        $.getJSON('https://raw.githubusercontent.com/LuskaAntunes/TerrasArrasadas/formul%C3%A1rio/src/json/campus-curso.json?token=GHSAT0AAAAAABQ4Y4LAG3VF67JRKPQFUXVSYSHAYSQ', function(data){
+        $.getJSON('https://raw.githubusercontent.com/LuskaAntunes/TerrasArrasadas/main/src/json/campus-curso.json?token=GHSAT0AAAAAABQ4Y4LBJ33RXMTJTYJLKW2OYSKJZLA', function(data){
            console.log("funcionou")
             html += '<option>Selecionar '+ id +'</option>';
             console.log(data);
@@ -306,8 +306,6 @@ modelo.addEventListener('change', ()=>{
 //envio para o banco de dados
 function enviar() {
    if(validNome && validMatricula && validGenero && validRaça && validEstado && validCampus && validCurso && validSemestre && validConfiança && validVacina && validModelo) {
-
-        console.log("deu certo")
         
         let listaPesquisa = JSON.parse(localStorage.getItem("listaPesquisa") || "[]")
 

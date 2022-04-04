@@ -40,7 +40,7 @@ p {
 #caixinha {
     position: absolute;
     width: 715px;
-    height: 610px;
+    height: 550px;
     left: 45px;
     top: 60px;
     
@@ -63,9 +63,27 @@ form{
     margin-right: 15px;
 }
 
-.campo label, .campo2 label, campo3 label {
+.campo label {
     margin-bottom: 0.3em;
     display: block;
+}
+
+.cursos1, .cursos2 {
+    width: 315px;
+    display: inline-block;
+} 
+
+.cursos1 label, .cursos2 label {
+    margin-bottom: 0.3em;
+    display: block;
+}
+
+
+
+.selecione  {
+   display: inline;
+   margin-bottom: 12px;
+
 }
 
 fieldset{
@@ -83,18 +101,19 @@ input{
     border-radius: 10px;
 }
 
-input[type="radio"] {
-    width: 20px;
-    height: 20px;
-    margin-bottom: 0px;
-}
 
 input[type="password"] {
     margin-bottom: 20px;
 }
 
 select {
+    width: 300px;
+    height: 40px;
+    padding-left: 8px;
+    margin-bottom: 10px;
+    border: none;
     border-radius: 10px;
+    background-color: #ffffff;
 }
 
 .campus {
@@ -102,8 +121,11 @@ select {
     margin-bottom: 10px;
     cursor: pointer;
 }
+
+
 button {
     display: block;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     width: 180px;
@@ -116,10 +138,10 @@ button {
     background-color: #444B54;
     color: #ffffff;
     cursor: pointer;
-    transition: transform 200ms ease-in
+    transition: transform 200ms ease-in;
 }
 
 button:hover {
-    transform: scale(1.05)
+    transform: scale(1.05);
 
 }

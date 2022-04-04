@@ -1,3 +1,41 @@
+$(document).ready(function(){
+    carregar_json('campus');
+    function carregar_json(id, cursos_id){
+        var html = '';
+
+        $.getJSON('https://raw.githubusercontent.com/LuskaAntunes/TerrasArrasadas/main/src/json/campus-curso.json?token=GHSAT0AAAAAABQ4Y4LAX4IDR3UMG2BOVHSIYSKKPDA', function(data){
+           console.log("funcionou")
+            html += '<option>Selecionar '+ id +'</option>';
+            console.log(data);
+            if(id == 'campus' && cursos_id == null){
+                for(var i = 0; i < data.campus.length; i++){
+                    html += '<option value='+ data.campus[i].sigla +'>'+ data.campus[i].nome+'</option>';
+                }
+            }else{
+                for(var i = 0; i < data.campus.length; i++){
+                    if(data.campus[i].sigla == cursos_id){
+                        for(var j = 0; j < data.campus[i].cursos.length; j++){
+                            html += '<option value='+ data.campus[i].sigla +'>'+data.campus[i].cursos[j]+ '</option>';
+                        }
+                    }
+                }
+            }
+
+            $('#'+id).html(html);
+        });
+        
+    }
+
+    $(document).on('change', '#campus', function(){
+        var cursos_id = $(this).val();
+        console.log(cursos_id);
+        if(cursos_id != null){
+            carregar_json('cursos', cursos_id);
+        }
+    });
+
+});
+
 
 let nome = document.querySelector("#nome")
 let labelNome = document.querySelector("#labelNome")
@@ -22,6 +60,24 @@ let validSenha = false
 let confirmação = document.querySelector("#confirmação")
 let labelConfirmação = document.querySelector("#labelConfirmação")
 let validConfirmação = false
+
+let campus = document.getElementById("campus");
+let validCampus = false
+function getSelectCampusValue() {
+    let campusValue = document.getElementById("campus").value;
+    validCampus= true
+
+    return campusValue, validCampus
+}
+
+let curso = document.getElementById("cursos");
+let validCurso = false
+function getSelectCursoValue() {
+    let cursoValue = document.getElementById("cursos").value;
+    validCurso= true
+
+    return cursoValue, validCurso
+}
 
 
 
@@ -104,16 +160,60 @@ confirmação.addEventListener('keyup', ()=>{
     }
 })
 
+campus.addEventListener('change', ()=>{
+    if(getSelectCampusValue() == "") {
+        validCurso = false 
+        
+    } 
+    else {
+        validCurso = true
+        return validCurso
+        
+    } 
+})
+
+curso.addEventListener('change', ()=>{
+    if(getSelectCursoValue() == "") {
+        validCampus = false 
+        
+    } 
+    else {
+        validCampus = true
+        return validCampus
+        
+    } 
+})
+
+
 function cadastrar() {
-    if(validNome && validSobrenome && validMatricula && validEmail && validSenha && validConfirmação){
+    if(validNome && validSobrenome && validMatricula && validEmail && validCampus && validCurso && validSenha && validConfirmação){
+        /*event.preventDefault()
+        function cadastrarUsuario() {
+            let url = "http://localhost:3000/cadastro"
+
+            body = {
+                "nome": nome.value,
+                "sobrenome": sobrenome.value,
+                "matricula": matricula.value,
+                "emaihttps://raw.githubusercontent.com/LuskaAntunes/TerrasArrasadas/main/src/json/campus-curso.json?token=GHSAT0AAAAAABQ4Y4LA5URZ4EHS3LFLWN6SYSKKG7Ql": email.value,
+                "senha": senha.value 
+            }
+        console.log(body)
+        }*/
+
+        
+        event.preventDefault()
         let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]")
 
         listaUser.push({ 
             nomeCadastro: nome.value,
             sobrenomeCadastro: sobrenome.value,
             matriculaCadastro: matricula.value,
+            campusCadastro: campus.value,
+            cursoCadastro: curso.value,
             emailCadastro: email.value,
-            senhaCadastro: senha.value        })
+            senhaCadastro: senha.value        
+        })
 
         localStorage.setItem("listaUser", JSON.stringify(listaUser))
         console.log(listaUser)

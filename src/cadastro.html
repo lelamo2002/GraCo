@@ -10,7 +10,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto&display=swap" rel="stylesheet">  
         
-        
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+
         <link rel="stylesheet" href="css/cadastro.css">
     </head>
 
@@ -21,7 +25,7 @@
                 <h2 id="subtitulo">Cadastro</h2>
                 <p>Faça seu cadastro para começar a navegar!</p>
             </div>
-            <form>
+            <form onsubmit="cadastrarUsuario()">
                 
                 <fieldset class="grupo">
                     <div class="campo">
@@ -44,47 +48,21 @@
                     </div>
                 </fieldset>
 
-                <div class="campo2" >
-                    <label>Campus:</label>
-                    <label class="campus">
-                    <input type="radio", name="campus", value="darcy">Darcy Ribeiro    
-                    </label>
-                    <label class="campus">
-                    <input type="radio", name="campus", value="fga">FGA
-                    </label class="campus">
-                    <label class="campus">
-                    <input type="radio", name="campus", value="ceilandia">Campus Ceilândia
-                    </label>
-                    <label class="campus">
-                    <input type="radio", name="campus", value="planaltina">Campus Planaltina
-                    </label>
-                </div>
+                <div id="selecione" >
+                    <div class="cursos1">
+                        <label>Campus:</label>
+                        <select id="campus", required, onchange="getSelectCampusValue()">
+                            <option selected disabled value="">Selecione um item da lista:</option>
+                        </select>
+                    </div>
 
-                <div class="campo">
-                    <label id="labelCurso">Curso:</label>
-                    <select id="curso" required>
-                        <option selected disabled value="">Selecione um item da lista:</option>
-                        <option>Administração</option>
-                        <option>Agronomia</option>
-                        <option>Arquitetura e urbanismo</option>
-                        <option>Arquivologia</option>
-                        <option>Artes Cênicas</option>
-                        <option>Artes Visuais</option>
-                        <option>Biblioteconomia</option>
-                        <option>Biotecnologia</option>
-                        <option>Ciência da Computação (bacharelado)</option>
-                        <option>Ciência Política</option>
-                        <option>Ciências Ambientais</option>
-                        <option>Ciências Biológicas</option>
-                        <option>Ciências Contábeis</option>
-                        <option>Ciências Econômicas</option>
-                        <option>Ciências Farmacêuticas</option>
-                        <option>Ciências Sociais</option>
-                        <option>Computação (licenciatura)</option>
-                        <option>Comunicação Organizacional</option>
-                        <option>Comunicação Social - Publicidade e Propaganda</option>
-                        <option>Comunicação Social - Audiovisual</option>
-                    </select>    
+                    <div class="cursos2">
+                        <label id="labelCurso">Curso:</label>
+                        <select id="cursos", required, onchange="getSelectCursoValue()">
+                            <option selected disabled value="">Selecione um item da lista:</option>                       
+                        </select> 
+                    </div>
+                       
                 </div>
                 <fieldset class="grupo3">
                     <div class="campo">
