@@ -3,7 +3,7 @@ $(document).ready(function(){
     function carregar_json(id, cursos_id){
         var html = '';
 
-        $.getJSON('https://raw.githubusercontent.com/LuskaAntunes/TerrasArrasadas/main/src/json/campus-curso.json?token=GHSAT0AAAAAABQ4Y4LAX4IDR3UMG2BOVHSIYSKKPDA', function(data){
+        $.getJSON('https://raw.githubusercontent.com/LuskaAntunes/TerrasArrasadas/main/src/json/campus-curso.json?token=GHSAT0AAAAAABQ4Y4LAKWK3G5OU6NOIOA7KYSMS4MA', function(data){
            console.log("funcionou")
             html += '<option>Selecionar '+ id +'</option>';
             console.log(data);
@@ -184,41 +184,50 @@ curso.addEventListener('change', ()=>{
     } 
 })
 
+function post(url, body) {
+    console.log(body)
+        let request = new XMLHttpRequest()
+        request.open("POST", url, true)
+        request.setRequestHeader("Content-type", "application/json")
+        request.send(JSON.stringify(body))
+
+        request.onload = function() {
+            console.log(this.responseText)
+        }
+        return request.responseText
+    }
+
 
 function cadastrar() {
     if(validNome && validSobrenome && validMatricula && validEmail && validCampus && validCurso && validSenha && validConfirmação){
-        /*event.preventDefault()
         function cadastrarUsuario() {
             let url = "http://localhost:3000/cadastro"
-
+            event.preventDefault()
+            
             body = {
                 "nome": nome.value,
                 "sobrenome": sobrenome.value,
                 "matricula": matricula.value,
-                "emaihttps://raw.githubusercontent.com/LuskaAntunes/TerrasArrasadas/main/src/json/campus-curso.json?token=GHSAT0AAAAAABQ4Y4LA5URZ4EHS3LFLWN6SYSKKG7Ql": email.value,
+                "email": email.value,
+                "campus":campus.value,
+                "curso":curso.value,
                 "senha": senha.value 
+               
             }
-        console.log(body)
-        }*/
+        post(url, body)
+        }
+       
+        cadastrarUsuario();
+        console.log("body")
+        window.location.href = "index.html"
 
         
-        event.preventDefault()
-        let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]")
 
-        listaUser.push({ 
-            nomeCadastro: nome.value,
-            sobrenomeCadastro: sobrenome.value,
-            matriculaCadastro: matricula.value,
-            campusCadastro: campus.value,
-            cursoCadastro: curso.value,
-            emailCadastro: email.value,
-            senhaCadastro: senha.value        
-        })
-
-        localStorage.setItem("listaUser", JSON.stringify(listaUser))
-        console.log(listaUser)
+        
     }
     else{
         alert("Preencha corretamente todos os campos antes de cadastrar-se!")
+
+        
     }
 }
