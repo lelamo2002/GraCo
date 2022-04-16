@@ -22,8 +22,22 @@ console.log(columns)
 const [campus, vacinacao] = columns;
 console.log(campus, vacinacao);
 
-//count each response for vacinacao by campus, possible results are: "undefined", "online","hibrido", "presencial"
+//count each response for vacinacao by campus, possible results are: "0", "1","2", "3"
 function countPiorvacinacao(campus, vacinacao) {
+
+  // count total amount of terms per campus
+  var campus_count = {};
+  for (var i = 0; i < campus.length; i++) {
+    if (campus_count[campus[i]] == undefined) {
+      campus_count[campus[i]] = 1;
+    } else {
+      campus_count[campus[i]]++;
+    }
+  }
+
+
+
+
 
   var vacinacaoPorCampus = {};
   for (i = 0; i < campus.length; i++) {
@@ -35,7 +49,8 @@ function countPiorvacinacao(campus, vacinacao) {
   //object vacinacaoPorCampus to array like: [campus, 1,1,1]
   var vacinacaoPorCampusArray = [];
   for (var key in vacinacaoPorCampus) {
-    vacinacaoPorCampusArray.push([key, vacinacaoPorCampus[key]["0"], vacinacaoPorCampus[key]["1"], vacinacaoPorCampus[key]["2"], vacinacaoPorCampus[key]["3"]]);
+    //insert percentage of vacinação per campus
+    vacinacaoPorCampusArray.push([key, ((vacinacaoPorCampus[key]["0"] / campus_count[key]) * 100), ((vacinacaoPorCampus[key]["1"] / campus_count[key]) * 100), ((vacinacaoPorCampus[key]["2"] / campus_count[key]) * 100), ((vacinacaoPorCampus[key]["3"] / campus_count[key]) * 100)]);
   }
   return vacinacaoPorCampusArray;
 }
@@ -54,9 +69,13 @@ function drawChart() {
 
   var options = {
     chart: {
-      title: 'Company Performance',
+      title: 'Porcentagem de cada dose de vacinação por campus',
       subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-    }
+    },
+    vAxes: {
+      // Adds titles to each axis.
+      0: { title: 'alunos (%)' },
+    },
   };
 
   var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
