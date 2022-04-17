@@ -5,7 +5,7 @@ function httpGet(theUrl) {
   return JSON.parse(xmlHttp.responseText);
 }
 
-const data = httpGet('http://localhost:3000/plot');
+const VacinaData = httpGet('http://localhost:3000/plot');
 
 function getColumns(data) {
   const campus = [];
@@ -17,10 +17,10 @@ function getColumns(data) {
   }
   return [campus, vacinacao];
 }
-const columns = getColumns(data)
-console.log(columns)
-const [campus, vacinacao] = columns;
-console.log(campus, vacinacao);
+const VacinaColumns = getColumns(VacinaData)
+
+const [VacinaCampus, VacinaVacinacao] = VacinaColumns;
+
 
 //count each response for vacinacao by campus, possible results are: "0", "1","2", "3"
 function countPiorvacinacao(campus, vacinacao) {
@@ -55,30 +55,9 @@ function countPiorvacinacao(campus, vacinacao) {
   return vacinacaoPorCampusArray;
 }
 
-const vacinacaoporcampus = countPiorvacinacao(campus, vacinacao);
+const vacinacaoporcampus = countPiorvacinacao(VacinaCampus, VacinaVacinacao);
 
 vacinacaoporcampus.unshift(['campus', 'sem vacina', '1 dose', '2 doses', '3 doses']);
 
 
 
-google.charts.load('current', { 'packages': ['bar'] });
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-  var data = google.visualization.arrayToDataTable(vacinacaoporcampus);
-
-  var options = {
-    chart: {
-      title: 'Porcentagem de cada dose de vacinação por campus',
-      subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-    },
-    vAxes: {
-      // Adds titles to each axis.
-      0: { title: 'alunos (%)' },
-    },
-  };
-
-  var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-  chart.draw(data, google.charts.Bar.convertOptions(options));
-}

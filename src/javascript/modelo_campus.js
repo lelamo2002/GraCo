@@ -5,7 +5,7 @@ function httpGet(theUrl) {
   return JSON.parse(xmlHttp.responseText);
 }
 
-const data = httpGet('http://localhost:3000/plot');
+const modeloCampusData = httpGet('http://localhost:3000/plot');
 
 function getColumns(data) {
   const campus = [];
@@ -17,10 +17,10 @@ function getColumns(data) {
   }
   return [campus, pior_modelo];
 }
-const columns = getColumns(data)
-console.log(columns)
-const [campus, pior_modelo] = columns;
-console.log(campus, pior_modelo);
+const modeloCampusColumns = getColumns(modeloCampusData)
+
+const [campus_modelo, pior_modelo_campus] = modeloCampusColumns;
+
 
 //count each response for pior_modelo by campus, possible results are: "undefined", "online","hibrido", "presencial"
 function countPiorModelo(campus, pior_modelo) {
@@ -40,26 +40,7 @@ function countPiorModelo(campus, pior_modelo) {
   return modeloPorCampusArray;
 }
 
-const modeloporcampus = countPiorModelo(campus, pior_modelo);
+const modeloporcampus = countPiorModelo(campus_modelo, pior_modelo_campus);
 
 modeloporcampus.unshift(['campus', 'online', 'hibrido', 'presencial'])
 
-console.log(modeloporcampus);
-
-google.charts.load('current', { 'packages': ['bar'] });
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-  var data = google.visualization.arrayToDataTable(modeloporcampus);
-
-  var options = {
-    chart: {
-      title: 'Company Performance',
-      subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-    }
-  };
-
-  var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-  chart.draw(data, google.charts.Bar.convertOptions(options));
-}

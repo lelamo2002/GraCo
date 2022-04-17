@@ -5,7 +5,7 @@ function httpGet(theUrl) {
   return JSON.parse(xmlHttp.responseText);
 }
 
-const data = httpGet('http://localhost:3000/plot');
+const dataConfianca = httpGet('http://localhost:3000/plot');
 
 function getColumns(data) {
 
@@ -16,9 +16,9 @@ function getColumns(data) {
   }
   return [confianca];
 }
-const columns = getColumns(data)
-console.log(columns)
-const [confianca] = columns;
+const confiancaColumns = getColumns(dataConfianca)
+
+const [confianca] = confiancaColumns;
 
 //count each response for pior_modelo by campus, possible results are: "sim" or "nao"
 function countPiorModelo(confianca) {
@@ -50,30 +50,5 @@ function countPiorModelo(confianca) {
 // return modelo;
 // }
 
-const [sim, nao] = countPiorModelo(confianca);
+const [ConfiancaSim, ConfiancaNao] = countPiorModelo(confianca);
 
-
-google.charts.load('current', { 'packages': ['corechart'] });
-google.charts.setOnLoadCallback(drawChart);
-
-
-
-
-
-function drawChart() {
-
-  var data = google.visualization.arrayToDataTable([
-    ['Confiança', 'Quantidade'],
-    ['sim', sim],
-    ['não', nao]
-  ]);
-
-  var options = {
-    title: 'My Daily Activities',
-    is3D: true,
-  };
-
-  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-  chart.draw(data, options);
-}
