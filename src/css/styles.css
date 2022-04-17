@@ -1,0 +1,315 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/**********************************/
+/* 0. Variáveis
+/**********************************/
+:root {
+	--font-primary:"Nunito", Helvetica, Arial, sans-serif;
+
+	--color-blue-dark:#0266AD;
+	--color-blue-ligh:#7DC9FF;
+	--color-wellow-dark:#AD6700;
+	--color-wellow-ligh:#FAC507;
+	--color-white: #F5F5F5;
+}
+
+/**********************************/
+/* 1. Estilos gerais
+/**********************************/
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--color-white);
+	font-family: var(--font-primary);
+}
+a, a:active, a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	color: var(--color-blue-dark);
+}
+
+hr {
+	border: none;
+	background-color: var(--color-wellow-dark);
+	height: 2px;
+	width: 200px;
+	margin: 20px auto;
+}
+
+p {
+	line-height: 21.82px;
+	padding: 0 10px;
+}
+
+.section_title {
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+
+img {
+	display: block;
+	border-radius: 12px;
+	max-width: 100%;
+}
+
+label {
+	margin-bottom: 0.3em;
+    display: inline;
+    margin-top: 12px;
+    margin-left: 12px;
+	color: black;
+}
+
+input{
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+	color: var(--color-wellow-dark);
+}
+select {
+	width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+	color: var(--color-wellow-dark);
+}
+
+
+/**********************************/
+/* 2. Menu
+/**********************************/
+
+.menuBase {
+	background-color: var(--color-blue-ligh);
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 960px;
+	margin: 0 auto;
+	flex-wrap: wrap;
+}
+.menu_2{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 1060px;
+	margin: 0 auto;
+	flex-wrap: wrap;
+}
+
+.menu_logo {
+	margin: 10px;
+}
+
+.nav_list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nav_link {
+	padding: 20px 10px;
+}
+
+/**********************************/
+/* 3. Header
+/**********************************/
+
+.intro {
+	font-weight: bold;
+	font-size: 2.5rem;
+	text-align: center;
+	margin: 0 auto;
+	padding: 25px 0;
+}
+
+/**********************************/
+/* 4. Quem somos
+/**********************************/
+
+.somos {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.somosContainer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.somosContainer_model{
+	display: flex;
+	flex-wrap: wrap-reverse;
+	align-items: center;
+}
+
+.somosContainer_text {
+	flex: 6 1 160px;
+}
+
+.somosContainer_img {
+	flex:1 1 350px;
+}
+
+/**********************************/
+/* 5. covid
+/**********************************/
+
+.covid {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.covidContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.infoCovid {
+	width: 280px;
+	margin: 0 20px;
+}
+
+.covid_title {
+	font-size: 1.5rem;
+	text-align: center;
+	margin: 10px 0 5px 0;
+}
+
+
+/**********************************/
+/* 6. Formúlario
+/**********************************/
+
+.forms {
+	background-color: var(--color-wellow-ligh);
+}
+
+.formsContainer {
+	max-width: 960px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.ordem{
+	max-width: 960px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-end;
+
+}
+
+
+.formulário {
+	width: 190px;
+	margin: 15px;
+	border: none;
+}
+
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+
+    background-color: #444B54;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 200ms ease-in
+}
+
+button:hover {
+    transform: scale(1.05)
+
+}
+
+
+/**********************************/
+/* 8. usuario
+/**********************************/
+
+.usuarioContainer {
+	max-width: 600px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+}
+
+.cadastro {
+	max-width: 300px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+.dados {
+	width: 200px;
+	height: 60px;
+	border: none;
+	justify-content: center;
+}
+
+.box {
+	width: 150px;
+    height: 22px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+	background-color: var(--color-blue-ligh);
+	color: black;
+	text-align: center;
+	font-size: 16px;
+	font-family: var(--font-primary);
+}
+
+
+
+/**********************************/
+/* 9. Footer
+/**********************************/
+
+.footer {
+	background-color: var(--color-blue-ligh);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 55px calc((100% - 960px)/2);
+}
+
+.footer_text, .footer_logo {
+	padding-left: 10px;
+	padding-right: 10px;
+}

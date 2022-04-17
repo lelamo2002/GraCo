@@ -1,10 +1,14 @@
+/*const jsonValues = require("../json/campusCurso.js")*/
 $(document).ready(function(){
     carregar_json('campus');
     function carregar_json(id, cursos_id){
         var html = '';
 
-        $.getJSON('https://raw.githubusercontent.com/LuskaAntunes/TerrasArrasadas/main/src/json/campus-curso.json?token=GHSAT0AAAAAABQ4Y4LAKWK3G5OU6NOIOA7KYSMS4MA', function(data){
-           console.log("funcionou")
+        
+
+        $.getJSON("https://gist.githubusercontent.com/marialuisa214/361f44ec0d51b988367ef4626ff01b0f/raw/3e5b9e2a7a921660110881249524ace93473cc1b/campus-curso.json", function(data){
+           
+
             html += '<option>Selecionar '+ id +'</option>';
             console.log(data);
             if(id == 'campus' && cursos_id == null){
@@ -186,16 +190,17 @@ curso.addEventListener('change', ()=>{
 
 function post(url, body) {
     console.log(body)
-        let request = new XMLHttpRequest()
-        request.open("POST", url, true)
-        request.setRequestHeader("Content-type", "application/json")
-        request.send(JSON.stringify(body))
+    let request = new XMLHttpRequest()
+    request.open("POST", url, true)
+    request.setRequestHeader("Content-type", "application/json")
+    request.send(JSON.stringify(body))
 
-        request.onload = function() {
-            console.log(this.responseText)
-        }
-        return request.responseText
+    request.onload = function() {
+        console.log(this.responseText)
     }
+    return request.responseText
+    
+}
 
 
 function cadastrar() {
@@ -211,19 +216,16 @@ function cadastrar() {
                 "email": email.value,
                 "campus":campus.value,
                 "curso":curso.value,
-                "senha": senha.value 
-               
+                "senha": senha.value   
             }
         post(url, body)
+            
+
         }
        
         cadastrarUsuario();
-        console.log("body")
-        window.location.href = "index.html"
-
         
-
-        
+        window.location.href = 'index.html'
     }
     else{
         alert("Preencha corretamente todos os campos antes de cadastrar-se!")

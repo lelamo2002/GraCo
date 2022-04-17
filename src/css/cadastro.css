@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #B5AFA2;
+    background-color: #0266AD;
     justify-content: center;
 
 }
@@ -44,7 +44,7 @@ p {
     left: 45px;
     top: 60px;
     
-    background: #EAE3DC;
+    background: #7DC9FF;
     box-shadow: 4px 4px 4px rgba(68, 75, 84, 0.62);
     border-radius: 15px;
     padding: 10px;
@@ -145,3 +145,5 @@ button:hover {
     transform: scale(1.05);
 
 }
+
+
