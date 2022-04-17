@@ -80,7 +80,7 @@ function post(url, body) {
 
                 localStorage.setItem("listaUsuario", JSON.stringify(listaUsuario))
                 
-                //location = "capa.html"
+                location = "capa.html"
 
             } else {
                 erro.setAttribute('style', 'visibility: visible;' )

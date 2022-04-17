@@ -341,6 +341,7 @@ function post(url, body) {
         console.log(this.responseText)
         if(this.responseText == '{ "statusCode": 200 }'){
             console.log('passei aqui')
+            location ="capa.html"
         }
     }
     return request.responseText
@@ -356,9 +357,9 @@ function enviar() {
         body = {
             "nome": nome.value,
             "matricula": matricula.value,
-            "campus": campus.value,
+            "campus": campus.value, 
             "curso": curso.value,
-            "confiança": confiança.value,
+            "confianca": confiança.value,
             "vacina": vacina.value,
             "modelo": modelo.value   
         }
