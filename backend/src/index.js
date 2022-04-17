@@ -53,6 +53,7 @@ app.post('/login', checksDontExistUserAccount, checkPassword, (req, res) => {
 app.post('/plot', checCad, (req, res) => {
 
   InsertPlot(req.body);
+  console.log(req.body)
   res.json({ "statusCode": 200 })
 });
 

@@ -29,7 +29,7 @@ function countPiorModelo(confianca) {
   for (var i = 0; i < confianca.length; i++) {
     if (confianca[i] == "sim") {
       sim++;
-    } else if (confianca[i] == "não") {
+    } else if (confianca[i] == "nao") {
       nao++;
     } else {
       continue;
