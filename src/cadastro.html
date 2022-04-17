@@ -16,73 +16,78 @@
         crossorigin="anonymous"></script>
 
         <link rel="stylesheet" href="css/cadastro.css">
+
+        <link rel="shortcut icon" type="imagex/png" href="img/icone.ico">
     </head>
 
-    <body>  
-        <div id="caixinha">
+    <body> 
+        <div id="elementos">
+            <div id="caixinha">
 
-            <div>
-                <h2 id="subtitulo">Cadastro</h2>
-                <p>Faça seu cadastro para começar a navegar!</p>
-            </div>
-            <form onsubmit="cadastrarUsuario()">
-                
-                <fieldset class="grupo">
-                    <div class="campo">
-                        <label id="labelNome">Nome:</label>
-                        <input type="text", name="nome", id="nome", placeholder="Digite aqui o seu nome" required>
-                        
-
-                        <label id="labelMatricula">Matrícula:</label>
-                        <input type="number", name="matricula", id="matricula", placeholder="Adicione aqui sua matrícula" required>
-
-                        </div>
-                </fieldset>
-                <fieldset class="grupo2">
-                    <div class="campo">
-                        <label id="labelSobrenome">Sobrenome:</label>
-                        <input type="text", name="sobrenome", id="sobrenome", placeholder="Digite aqui seu sobrenome" required>
-                    
-                        <label id="labelEmail">E-mail:</label>
-                        <input type="email",name="email", id="email", placeholder="Digite aqui seu e-mail" required>
-                    </div>
-                </fieldset>
-
-                <div id="selecione" >
-                    <div class="cursos1">
-                        <label>Campus:</label>
-                        <select id="campus", required, onchange="getSelectCampusValue()">
-                            <option selected disabled value="">Selecione um item da lista:</option>
-                        </select>
-                    </div>
-
-                    <div class="cursos2">
-                        <label id="labelCurso">Curso:</label>
-                        <select id="cursos", required, onchange="getSelectCursoValue()">
-                            <option selected disabled value="">Selecione um item da lista:</option>                       
-                        </select> 
-                    </div>
-                       
+                <div>
+                    <h2 id="subtitulo">Cadastro</h2>
+                    <p>Faça seu cadastro para começar a navegar!</p>
                 </div>
-                <fieldset class="grupo3">
-                    <div class="campo">
-                        <label id="labelSenha">Senha:</label>
-                        <input type="password", name="senha", id="senha", placeholder="Digite aqui a senha que ira ultilizar" required>
+                <form onsubmit="cadastrarUsuario()">
+                    
+                    <fieldset class="grupo">
+                        <div class="campo">
+                            <label id="labelNome">Nome:</label>
+                            <input type="text", name="nome", id="nome", placeholder="Digite aqui o seu nome" required>
+                            
+    
+                            <label id="labelMatricula">Matrícula:</label>
+                            <input type="number", name="matricula", id="matricula", placeholder="Adicione aqui sua matrícula" required>
+    
+                            </div>
+                    </fieldset>
+                    <fieldset class="grupo2">
+                        <div class="campo">
+                            <label id="labelSobrenome">Sobrenome:</label>
+                            <input type="text", name="sobrenome", id="sobrenome", placeholder="Digite aqui seu sobrenome" required>
+                        
+                            <label id="labelEmail">E-mail:</label>
+                            <input type="email",name="email", id="email", placeholder="Digite aqui seu e-mail" required>
+                        </div>
+                    </fieldset>
+    
+                    <div id="selecione" >
+                        <div class="cursos1">
+                            <label>Campus:</label>
+                            <select id="campus", required, onchange="getSelectCampusValue()">
+                                <option selected disabled value="">Selecione um item da lista:</option>
+                            </select>
+                        </div>
+    
+                        <div class="cursos2">
+                            <label id="labelCurso">Curso:</label>
+                            <select id="cursos", required, onchange="getSelectCursoValue()">
+                                <option selected disabled value="">Selecione um item da lista:</option>                       
+                            </select> 
+                        </div>
+                           
                     </div>
-                </fieldset> 
-                <fieldset class="grupo4">
-                    <div class="campo">
-                        <label id="labelConfirmação">Confirme sua senha:</label>
-                        <input type="password", name="confirmação", id="confirmação", placeholder="Confirme sua senha" required>
-                    </div>
-                </fieldset> 
-
-                <div></div>
-
-                <button onclick="cadastrar()" id="botao">Registrar-se</button>
-            </form>
-        </div>
+                    <fieldset class="grupo3">
+                        <div class="campo">
+                            <label id="labelSenha">Senha:</label>
+                            <input type="password", name="senha", id="senha", placeholder="Digite aqui a senha que ira ultilizar" required>
+                        </div>
+                    </fieldset> 
+                    <fieldset class="grupo4">
+                        <div class="campo">
+                            <label id="labelConfirmação">Confirme sua senha:</label>
+                            <input type="password", name="confirmação", id="confirmação", placeholder="Confirme sua senha" required>
+                        </div>
+                    </fieldset>
+    
+                    <button onclick="cadastrar()" id="botao">Registrar-se</button>
+                </form>
+            </div>
+            
+        </div> 
+        
         <script type="text/javascript" src="javascript/cadastro.js"></script>
+
     </body>
    
 </html>

@@ -1,3 +1,24 @@
+if(localStorage.getItem('listaUsuario') == null ) {
+    alert("Você precisa estar logado para acessar essa página!")
+    location = "index.html"
+}
+
+let user = JSON.parse(localStorage.getItem('listaUsuario')) 
+let nomeUser = document.getElementById("nomeUser")
+
+let sobrenomeUser = document.getElementById("sobrenomeUser")
+
+let matriculaUser = document.getElementById("matriculaUser")
+
+let campusUser = document.getElementById("campusUser")
+
+nomeUser.innerHTML = user[0].nomeCadastro 
+sobrenomeUser.innerHTML = user[0].sobrenomeCadastro 
+matriculaUser.innerHTML = user[0].matriculaCadastro 
+campusUser.innerHTML = user[0].campoCadastro 
+
+
+
 $(document).ready(function(){
     carregar_json('estado');
     function carregar_json(id, cidade_id){
@@ -42,7 +63,7 @@ $(document).ready(function(){
     function carregar_json(id, cursos_id){
         var html = '';
 
-        $.getJSON('https://raw.githubusercontent.com/LuskaAntunes/TerrasArrasadas/main/src/json/campus-curso.json?token=GHSAT0AAAAAABQ4Y4LBJ33RXMTJTYJLKW2OYSKJZLA', function(data){
+        $.getJSON('https://gist.githubusercontent.com/marialuisa214/361f44ec0d51b988367ef4626ff01b0f/raw/3e5b9e2a7a921660110881249524ace93473cc1b/campus-curso.json', function(data){
            console.log("funcionou")
             html += '<option>Selecionar '+ id +'</option>';
             console.log(data);
@@ -302,36 +323,50 @@ modelo.addEventListener('change', ()=>{
     } 
 })
 
+function apagar() {
+    localStorage.clear();
+
+    location = "index.html"
+}
+
 
 //envio para o banco de dados
+function post(url, body) {
+    let request = new XMLHttpRequest()
+    request.open("POST", url, true)
+    request.setRequestHeader("Content-type", "application/json")
+    request.send(JSON.stringify(body))
+
+    request.onload = function() {
+        console.log(this.responseText)
+        if(this.responseText == '{ "statusCode": 200 }'){
+            console.log('passei aqui')
+        }
+    }
+    return request.responseText
+    
+}
+
+
 function enviar() {
    if(validNome && validMatricula && validGenero && validRaça && validEstado && validCampus && validCurso && validSemestre && validConfiança && validVacina && validModelo) {
+        let url = "http://localhost:3000/plot"
+        event.preventDefault()
         
-        let listaPesquisa = JSON.parse(localStorage.getItem("listaPesquisa") || "[]")
-
-        listaPesquisa.push({ 
-            nomeCadastro: nome.value,
-            matriculaCadastro: matricula.value,
-            generoCadastro: genero.value,
-            raçaCadastro: raça.value,
-            estadoCadastro: estado.value,
-            campoCadastro: campus.value,
-            cursoCadastro: curso.value,
-            semestreCadastro: semestre.value,
-            confiançaCadastro: confiança.value,
-            vacinaCadastro: vacina.value,
-            modeloCadastro: modelo.value
-        })
-
-        localStorage.setItem("listaPesquisa", JSON.stringify(listaPesquisa))
-        console.log(listaPesquisa)
+        body = {
+            "nome": nome.value,
+            "matricula": matricula.value,
+            "campus": campus.value,
+            "curso": curso.value,
+            "confiança": confiança.value,
+            "vacina": vacina.value,
+            "modelo": modelo.value   
+        }
+    post(url, body)
+        
     }
     else{
         alert("Preencha corretamente todos os campos antes de cadastrar-se!")
         
     }
 }
-
-
-
-

@@ -9,8 +9,9 @@
         <link rel="preconnect" href="<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto&display=swap" rel="stylesheet">
-        
         <link rel="stylesheet" href="css/login.css">
+
+        <link rel="shortcut icon" type="imagex/png" href="img/icone.ico">
 
     </head>
     <body>
@@ -26,7 +27,11 @@
                 <label>Insira seu cadastro para começar a navegar!</label>
             </div>
             <div class="login-container">    
-                <form class="login_form", onsubmit="return false">
+                <form class="login_form">
+
+                    <div class="erro" id="mensagemErro">
+                        <p id="erro">Usuário ou senha incorretos, tente novamente!</p>
+                    </div> 
                     <div class="login_label">
                         <label id="emailLabel" >E-mail:</label>
                         <input class="login_input", type="e-mail", id="emailInput" , placeholder="e-mail">
@@ -34,8 +39,14 @@
                     
                     <div class="login_label">
                         <label id="senhaLabel">Senha:</label>
-                        <input class="login_input", type="password", id="senhaInput" placeholder="senha">
-                    </div>
+                        <div class="senha">
+                            <input class="login_input", type="password", id="senhaInput" placeholder="senha">
+                            <div class="olho">
+                                <img id="eyes" onclick="visualizar()" src="imagens/openEye.svg" alt="">
+                            </div>
+                        </div>
+                    </div>   
+
                     <button class="login_button", onclick="entrar()">Entrar</button>
                     <div class="login_register">
                     <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se!</a></p>
