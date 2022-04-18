@@ -17,7 +17,13 @@ sobrenomeUser.innerHTML = user[0].sobrenomeCadastro
 matriculaUser.innerHTML = user[0].matriculaCadastro
 campusUser.innerHTML = user[0].campoCadastro
 
+let pre_registro = document.getElementById("pre_registro")
 
+let pre_matricula = document.getElementById("pre_matricula")
+
+pre_registro.innerHTML = '<input type="text" , name="nome" , id="nome" , placeholder="Digite aqui o seu nome" required, value="' +user[0].nomeCadastro + ' ' + user[0].sobrenomeCadastro+'">'
+
+pre_matricula.innerHTML ='<input type="number" , name="matricula" , id="matricula" , placeholder="Adicione aqui sua matrícula" required, value="' + user[0].matriculaCadastro + '">'
 
 $(document).ready(function () {
     carregar_json('estado');
