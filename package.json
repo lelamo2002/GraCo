@@ -12,7 +12,8 @@
     "sqlite3": "^5.0.2"
   },
   "scripts": {
-    "dev": "nodemon ./backend/src/index"
+    "dev": "nodemon ./backend/src/index",
+    "start": "node ./backend/src/index"
   },
   "type": "module",
   "repository": "https://github.com/LeoLago/TerrasArrasadas.git",
