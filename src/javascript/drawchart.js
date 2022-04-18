@@ -31,26 +31,28 @@ function drawChart() {
 
   // Set chart options
   var optionsConfianca = {
-    title: 'My Daily Activities',
+    title: 'N° total de estudantes X Nivel de Confiança',
+    subtitle: 'Dados da Covid- Graco. 2022',
     is3D: true,
   };
   // Set chart options
   var modeloAlunoOptions = {
-    title: 'My Daily Activities',
+    title: 'Alunos do curso X Sistema de Ensino',
+    subtitle: 'Dados da Covid- Graco. 2022',
     is3D: true,
   };
   // Set chart options
   var modeloCampusOptions = {
     chart: {
-      title: 'Company Performance',
-      subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+      title: 'Modalidade de ensino X Instituição',
+      subtitle: 'Dados da Covid- Graco. 2022',
     }
   };
 
   var VacinaOptions = {
     chart: {
-      title: 'Porcentagem de cada dose de vacinação por campus',
-      subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+      title: 'Porcentagem de Vacinação por campus',
+      subtitle: 'Dados da Covid- Graco. 2022',
     },
     vAxes: {
       // Adds titles to each axis.

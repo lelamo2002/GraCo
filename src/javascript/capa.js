@@ -58,43 +58,47 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function () {
+$(document).ready(function(){
     carregar_json('campus');
-    function carregar_json(id, cursos_id) {
+    function carregar_json(id, cursos_id){
         var html = '';
 
-        $.getJSON('https://gist.githubusercontent.com/marialuisa214/361f44ec0d51b988367ef4626ff01b0f/raw/3e5b9e2a7a921660110881249524ace93473cc1b/campus-curso.json', function (data) {
-            console.log("funcionou")
-            html += '<option>Selecionar ' + id + '</option>';
+        
+
+        $.getJSON("https://gist.githubusercontent.com/marialuisa214/361f44ec0d51b988367ef4626ff01b0f/raw/3e5b9e2a7a921660110881249524ace93473cc1b/campus-curso.json", function(data){
+           
+
+            html += '<option>Selecionar '+ id +'</option>';
             console.log(data);
-            if (id == 'campus' && cursos_id == null) {
-                for (var i = 0; i < data.campus.length; i++) {
-                    html += '<option value=' + data.campus[i].sigla + '>' + data.campus[i].nome + '</option>';
+            if(id == 'campus' && cursos_id == null){
+                for(var i = 0; i < data.campus.length; i++){
+                    html += '<option value='+ data.campus[i].sigla +'>'+ data.campus[i].nome+'</option>';
                 }
-            } else {
-                for (var i = 0; i < data.campus.length; i++) {
-                    if (data.campus[i].sigla == cursos_id) {
-                        for (var j = 0; j < data.campus[i].cursos.length; j++) {
-                            html += '<option value=' + data.campus[i].sigla + '>' + data.campus[i].cursos[j] + '</option>';
+            }else{
+                for(var i = 0; i < data.campus.length; i++){
+                    if(data.campus[i].sigla == cursos_id){
+                        for(var j = 0; j < data.campus[i].cursos.length; j++){
+                            html += '<option value='+ data.campus[i].sigla +'>'+data.campus[i].cursos[j]+ '</option>';
                         }
                     }
                 }
             }
 
-            $('#' + id).html(html);
+            $('#'+id).html(html);
         });
-
+        
     }
 
-    $(document).on('change', '#campus', function () {
+    $(document).on('change', '#campus', function(){
         var cursos_id = $(this).val();
         console.log(cursos_id);
-        if (cursos_id != null) {
+        if(cursos_id != null){
             carregar_json('cursos', cursos_id);
         }
     });
 
 });
+
 
 
 //declarando as variaveis e pegando os input's 
@@ -143,14 +147,7 @@ function getSelectCampusValue() {
     return campusValue, validCampus
 }
 
-let curso = document.getElementById("curso");
-let validCurso = false
-function getSelectCursoValue() {
-    let cursoValue = document.getElementById("curso").value;
-    validCurso = true
 
-    return cursoValue, validCurso
-}
 
 let semestre = document.getElementById("semestre");
 let validSemestre = false
@@ -262,17 +259,6 @@ campus.addEventListener('change', () => {
     }
 })
 
-curso.addEventListener('change', () => {
-    if (getSelectCursoValue() == "") {
-        validCampus = false
-
-    }
-    else {
-        validCampus = true
-        return validCampus
-
-    }
-})
 
 semestre.addEventListener('change', () => {
     if (getSelectSemestreValue() == "") {
@@ -350,13 +336,13 @@ function post(url, body) {
 
 
 function enviar() {
-    if (validNome && validMatricula && validGenero && validRaça && validEstado && validCampus && validCurso && validSemestre && validConfiança && validVacina && validModelo) {
+    if (validNome && validMatricula && validGenero && validRaça && validEstado && validCampus && validSemestre && validConfiança && validVacina && validModelo) {
         let url = "http://localhost:3000/plot"
         event.preventDefault()
 
         body = {
             "matricula": matricula.value,
-            "curso": curso.value,
+            "curso": "",
             "semestre": semestre.value,
             "campus": campus.value,
             "confianca": confiança.value,
