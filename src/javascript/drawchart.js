@@ -37,7 +37,7 @@ function drawChart() {
   };
   // Set chart options
   var modeloAlunoOptions = {
-    title: 'Alunos do curso X Sistema de Ensino',
+    title: 'Sistema de Ensino',
     subtitle: 'Dados da Covid- Graco. 2022',
     is3D: true,
   };
@@ -46,6 +46,7 @@ function drawChart() {
     chart: {
       title: 'Modalidade de ensino X Instituição',
       subtitle: 'Dados da Covid- Graco. 2022',
+      
     }
   };
 
