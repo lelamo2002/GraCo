@@ -14,9 +14,21 @@ Sebastian Hector Zuzunaga Rosado | 211006957
 
 ### Sobre o projeto:
 
+Este trabalho foi composto pela Feudo Preto - Terras Devastadas. Juntos, a associação de cavaleiros negros enfrentaram grandes batalhas afim de construir este projeto que visa expor de maneira gráfica os dados da covid dos alunos da UnB, com objetivo de complementar as informações dispóniveis referentes ao modelo híbrido.
+
 ### Layout do projeto:
 ![brave_GAUcCaWGYh](https://user-images.githubusercontent.com/98344493/164768163-34300a65-e65e-4f56-915c-f1187c85433a.png)
 
+### Tecnologias utilizadas:
+
+* Javascript
+* Html
+* Css
+* Node
+* Php
+* Sqlite
+* Google Charts
+* Yarn
 
 ### Como executar:
 ##### Front-end
