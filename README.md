@@ -14,13 +14,17 @@ Sebastian Hector Zuzunaga Rosado | 211006957
 
 ### Sobre o projeto:
 
+### Layout do projeto:
+![brave_GAUcCaWGYh](https://user-images.githubusercontent.com/98344493/164768163-34300a65-e65e-4f56-915c-f1187c85433a.png)
+
+
 ### Como executar:
 ##### Front-end
 Atualmente o front-end consiste em uma aplicação envolvendo **HTML** e **CSS**,com as páginas sem estarem conectadas. Portanto, para a vizualização das mesmas basta abrir os arquivos que se encontram na pasta `src` em um navegador.  
 
 
 ##### Back-end
- Antes de rodar o código é necessário executar o comando `yarn init`, depois, use o comando `yarn dev`
+ Antes de rodar o código é necessário executar o comando `yarn`, depois, use o comando `yarn dev`
 
 
 
