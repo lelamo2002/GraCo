@@ -25,6 +25,7 @@ pre_registro.innerHTML = '<input type="text" , name="nome" , id="nome" , placeho
 
 pre_matricula.innerHTML ='<input type="number" , name="matricula" , id="matricula" , placeholder="Adicione aqui sua matrícula" required, value="' + user[0].matriculaCadastro + '">'
 
+
 $(document).ready(function () {
     carregar_json('estado');
     function carregar_json(id, cidade_id) {
@@ -33,7 +34,6 @@ $(document).ready(function () {
         $.getJSON('https://gist.githubusercontent.com/letanure/3012978/raw/36fc21d9e2fc45c078e0e0e07cce3c81965db8f9/estados-cidades.json', function (data) {
 
             html += '<option>Selecionar ' + id + '</option>';
-            console.log(data);
             if (id == 'estado' && cidade_id == null) {
                 for (var i = 0; i < data.estados.length; i++) {
                     html += '<option value=' + data.estados[i].sigla + '>' + data.estados[i].nome + '</option>';
@@ -71,12 +71,11 @@ $(document).ready(function () {
 
 
 
-        $.getJSON("https://gist.githubusercontent.com/marialuisa214/361f44ec0d51b988367ef4626ff01b0f/raw/3e5b9e2a7a921660110881249524ace93473cc1b/campus-curso.json", function (data) {
+        $.getJSON("https://gist.githubusercontent.com/marialuisa214/361f44ec0d51b988367ef4626ff01b0f/raw/eab5bc2c839d98170b944c15beeef7a06208e0b5/campus-curso.json", function (data) {
 
 
             html += '<option>Selecionar ' + id + '</option>';
-            console.log(data);
-            if (id == 'campus' && cursos_id == null) {
+              if (id == 'campus' && cursos_id == null) {
                 for (var i = 0; i < data.campus.length; i++) {
                     html += '<option value=' + data.campus[i].sigla + '>' + data.campus[i].nome + '</option>';
                 }
@@ -110,11 +109,11 @@ $(document).ready(function () {
 //declarando as variaveis e pegando os input's 
 let nome = document.getElementById("nome");
 let nomeLabel = document.getElementById("nomeLabel");
-let validNome = false;
+let validNome = true;
 
 let matricula = document.getElementById("matricula");
 let matriculaLabel = document.getElementById("matriculaLabel");
-let validMatricula = false;
+let validMatricula = true;
 
 // usando o function para conseguir "resgatar" o valor do option
 
@@ -197,6 +196,7 @@ nome.addEventListener('keyup', () => {
     if (nome.value.length <= 2) {
         nomeLabel.setAttribute('style', 'color: red')
         nomeLabel.innerHTML = "<strong>Nome:</strong>"
+        validNome = false
 
     } else {
         nomeLabel.setAttribute('style', 'color: green')
@@ -206,9 +206,10 @@ nome.addEventListener('keyup', () => {
 })
 
 matricula.addEventListener('keyup', () => {
-    if (matricula.value.length != 8) {
+    if (matricula.value.length != 9) {
         matriculaLabel.setAttribute('style', 'color: red')
         matriculaLabel.innerHTML = "<strong>Matrícula:</strong>"
+        validMatricula = false
 
     } else {
         matriculaLabel.setAttribute('style', 'color: green')
@@ -331,10 +332,7 @@ function post(url, body) {
 
     request.onload = function () {
         console.log(this.responseText)
-        // location = "capa.html"
-        if (this.responseText == '{ "statusCode": 200 }') {
-            console.log('passei aqui')
-        }
+        location = "capa.html"
     }
     return request.responseText
 
@@ -344,8 +342,7 @@ function post(url, body) {
 function enviar() {
     if (validNome && validMatricula && validGenero && validRaça && validEstado && validCampus && validSemestre && validConfiança && validVacina && validModelo) {
         let url = "http://localhost:3000/plot"
-        event.preventDefault()
-
+                
         body = {
             "matricula": matricula.value,
             "curso": "",
